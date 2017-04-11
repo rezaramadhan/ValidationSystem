@@ -35,6 +35,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'form.apps.FormConfig',
+    'email_validation.apps.EmailValidationConfig',
+    'phone_validation.apps.PhoneValidationConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

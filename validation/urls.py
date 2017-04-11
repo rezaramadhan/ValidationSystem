@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('form.urls')),
+    url(r'^validate/email/', include('email_validation.urls')),
 ]
