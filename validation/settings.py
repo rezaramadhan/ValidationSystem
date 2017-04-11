@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from os.path import abspath, basename, dirname, join, normpath
+from sys import path
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -51,6 +54,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'validation.urls'
 
+DJANGO_ROOT = dirname(dirname(abspath(__file__)))
+
+SITE_ROOT = dirname(DJANGO_ROOT)
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -66,6 +74,10 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_DIRS = (
+    normpath(join(SITE_ROOT, 'templates')),
+)
 
 WSGI_APPLICATION = 'validation.wsgi.application'
 
