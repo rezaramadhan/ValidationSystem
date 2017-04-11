@@ -35,7 +35,7 @@
 
                 <label>
                     <span>Nama Lengkap</span>
-                    <input type="text" name="name">
+                    <input type="text" name="name" id="name">
                 </label>
 
                 <!--
@@ -51,7 +51,7 @@
 
                 <label>
                     <span>Nomor Telepon</span>
-                    <input type="text" name="name">
+                    <input type="text" name="phone_number" id="phone_number">
                 </label>
 
                 <!--
@@ -70,7 +70,7 @@
 
                 <label>
                     <span>Email</span>
-                    <input type="email" name="email" value="faza.thirafi@gmail.com">
+                    <input type="email" name="email" id="email" value="">
                 </label>
 
                 <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
@@ -137,13 +137,30 @@
 
         // Here is how to show an error message next to a form field
 
+        var ajaxRequest;
+        $('#email').keyup(function() {
+        var value = $(this).val();
+        clearTimeout(ajaxRequest);
+        ajaxRequest = setTimeout(function(sn) {
+          $.ajax({
+            type: 'post',
+            url: 'screenNameCheck.php',
+            data: 'Screen_Name=' + value,
+            success: function(r) {
+              $('.screenNameError').html(r);
+            }
+          });
+        }, 500, value);
+        });
+
+
         var errorField = $('.form-input-name-row');
 
         // Adding the form-invalid-data class will show
         // the error message and the red x for that field
 
         errorField.addClass('form-invalid-data');
-        errorField.find('.form-invalid-data-info').text('Please enter valid email address');
+        errorField.find('.form-invalid-data-info').text('Please enter valid value');
 
 
         // Here is how to mark a field with a green check mark
