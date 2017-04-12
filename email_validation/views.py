@@ -13,6 +13,6 @@ def validation_form(request):
     j = re.sub(r"(\w):", r'\1":', j)
     body = json.loads(j)
     email = body["email"]
-    # result = validate_email(email)
-    response = "{ valid : '" + str(True) + "' }"
+    result = validate_email(email)
+    response = "{ valid : '" + str(result) + "' }"
     return HttpResponse(response)

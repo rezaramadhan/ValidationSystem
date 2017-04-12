@@ -190,10 +190,19 @@
                 var data = xmlhttp.responseText;
             }
         };
-        document.getElementById("isEmailValid").innerHTML = data;
+        var obj = JSON.parse(data);
+        var str = '';
+        if (obj.valid=="True") {
+            str = 'true';
+        }
+        else {
+            str = 'false';
+        }
+
+        document.getElementById("isEmailValid").innerHTML = str;
 
         // document.getElementById("id01").innerHTML = x;
-        var isTrueSet = (document.getElementById("isEmailValid").value == "true");
+        var isTrueSet = (document.getElementById("isEmailValid").value == 'true');
         validateEmailResponse(isTrueSet);
 
     }
@@ -216,7 +225,16 @@
                 var data = xmlhttp.responseText;
             }
         };
-        document.getElementById("isPhoneValid").innerHTML = data;
+        var obj = JSON.parse(data);
+        var str = '';
+        if (obj.valid=="True") {
+            str = 'true';
+        }
+        else {
+            str = 'false';
+        }
+
+        document.getElementById("isPhoneValid").innerHTML = str;
 
         var isTrueSet = (document.getElementById("isPhoneValid").value == 'true');
         validatePhoneResponse(isTrueSet);
@@ -265,6 +283,11 @@
         var email = document.getElementById("email").value;
         var phone = document.getElementById("phone_number").value;
 
+        var v_email = document.getElementById("isEmailValid").value;
+        var v_phone = document.getElementById("isPhoneValid").value;
+
+
+
         var result = true;
 
         //document.getElementById("id01").innerHTML = fullName;
@@ -284,6 +307,9 @@
             result = false;
             document.getElementById("emailAlert").innerHTML = emailAlert;
         }
+        else if (v_email!='true'){
+            result = false;
+        }
         else {
             emailAlert = "";
             document.getElementById("emailAlert").innerHTML = emailAlert;
@@ -293,6 +319,9 @@
             phoneAlert = "Required.";
             result = false;
             document.getElementById("phoneAlert").innerHTML = phoneAlert;
+        }
+        else if (v_phone!='true'){
+            result = false;
         }
         else {
             phoneAlert = "";
