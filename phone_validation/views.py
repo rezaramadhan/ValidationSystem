@@ -10,8 +10,12 @@ phoneDict = []
 # Create your views here.	
 @csrf_exempt
 def validation_form(request):
-	body_unicode = request.body.decode('utf-8')
-	body = json.loads(request.body)
+	j = request.body.decode('utf-8')
+	j = re.sub(r"{\s*(\w)", r'{"\1', j)
+    j = re.sub(r",\s*(\w)", r',"\1', j)
+    j = re.sub(r"(\w):", r'\1":', j)
+	body = json.loads(j)
+
 	to = body["phone"] #6281218641998
 
 	api_key = '9c085211'
@@ -30,8 +34,12 @@ def validation_form(request):
 
 @csrf_exempt
 def code_verification(request):
-	body_unicode = request.body.decode('utf-8')
-	body = json.loads(request.body)
+	j = request.body.decode('utf-8')
+	j = re.sub(r"{\s*(\w)", r'{"\1', j)
+    j = re.sub(r",\s*(\w)", r',"\1', j)
+    j = re.sub(r"(\w):", r'\1":', j)
+	body = json.loads(j)
+	
 	phone = body["phone"] #6281218641998
 	verificationCode = body["phone"]
 
