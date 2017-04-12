@@ -18,14 +18,14 @@
 </head>
 
 
-	
+
 
 
     <div class="main-content">
 
         <!-- You only need this form and the form-validation.css -->
 
-        <form class="form-validation" id="myForm" method="post" onsubmit="return validateAll()" action=""> 
+        <form class="form-validation" id="myForm" method="post" onsubmit="return validateAll()" action="">
         {% csrf_token %}
 
             <div class="form-title-row">
@@ -131,7 +131,7 @@
 
         <input id="isEmailValid" style="display: none;" value="false"></input>
         <input id="isPhoneValid" style="display: none;" value="false"></input>
-        
+
     </div>
 
 
@@ -156,7 +156,7 @@
 //     var out = "";
 //     var i;
 //     for(i = 0; i < arr.length; i++) {
-//         out += '<a href="' + arr[i].url + '">' + 
+//         out += '<a href="' + arr[i].url + '">' +
 //         arr[i].display + '</a><br>';
 //     }
 //     document.getElementById("id01").innerHTML = out;
@@ -165,28 +165,27 @@
 
 
     function sendRequest(json_obj) {
-        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-        xmlhttp.open("POST", "localhost:8000/validate/email/");
+        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+        xmlhttp.open("POST", "http://localhost:8000/validate/email/");
         xmlhttp.setRequestHeader("Content-Type", "application/json");
-        xmlhttp.send(JSON.stringify(json_obj));        
+        xmlhttp.send(JSON.stringify(json_obj));
     }
 
     function blurEmailFunction() {
         var x = document.getElementById("email").value;
         // No focus = Changes the background color of input to red
-        
-        var json_email = [
-        {
+
+        var json_email = {
             "email": x,
-        }];
+        };
         //fungsi
 
-        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-        xmlhttp.open("POST", "localhost:8000/validate/email/");
+        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+        xmlhttp.open("POST", "http://localhost:8000/validate/email/");
         xmlhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
-        xmlhttp.send(JSON.stringify(json_email));      
-        xmlhttp.onreadystatechange = function() 
-        { 
+        xmlhttp.send(JSON.stringify(json_email));
+        xmlhttp.onreadystatechange = function()
+        {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var data = xmlhttp.responseText;
             }
@@ -196,7 +195,7 @@
         // document.getElementById("id01").innerHTML = x;
         var isTrueSet = (document.getElementById("isEmailValid").value == "true");
         validateEmailResponse(isTrueSet);
-        
+
     }
 
     function blurPhoneFunction() {
@@ -207,12 +206,12 @@
         }];
         //fungsi
 
-        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
         xmlhttp.open("POST", "localhost:8000/validate/phone/");
         xmlhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
-        xmlhttp.send(JSON.stringify(json_phone));      
-        xmlhttp.onreadystatechange = function() 
-        { 
+        xmlhttp.send(JSON.stringify(json_phone));
+        xmlhttp.onreadystatechange = function()
+        {
              if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var data = xmlhttp.responseText;
             }
@@ -239,7 +238,7 @@
             var successField = $('.form-input-email-row');
 
             successField.addClass('form-valid-data');
-        }        
+        }
     }
 
     function validatePhoneResponse(phoneValid) {
@@ -256,7 +255,7 @@
             var successField = $('.form-input-phone-row');
 
             successField.addClass('form-valid-data');
-        }        
+        }
     }
 
     function validateAll() {
@@ -265,7 +264,7 @@
         var fullName = document.getElementById("name").value;
         var email = document.getElementById("email").value;
         var phone = document.getElementById("phone_number").value;
-        
+
         var result = true;
 
         //document.getElementById("id01").innerHTML = fullName;
@@ -277,7 +276,7 @@
         }
         else {
             fullNameAlert = "";
-            document.getElementById("fullNameAlert").innerHTML = fullNameAlert;     
+            document.getElementById("fullNameAlert").innerHTML = fullNameAlert;
         }
 
         if (email == null || email =="" ) {
@@ -287,7 +286,7 @@
         }
         else {
             emailAlert = "";
-            document.getElementById("emailAlert").innerHTML = emailAlert;     
+            document.getElementById("emailAlert").innerHTML = emailAlert;
         }
 
         if (phone == null || phone =="" ) {
@@ -297,7 +296,7 @@
         }
         else {
             phoneAlert = "";
-            document.getElementById("phoneAlert").innerHTML = phoneAlert;     
+            document.getElementById("phoneAlert").innerHTML = phoneAlert;
         }
 
         var agree = document.getElementById("agreement").checked;
@@ -308,11 +307,11 @@
         }
         else {
             agreeAlert = "";
-            document.getElementById("agreeAlert").innerHTML = agreeAlert;     
+            document.getElementById("agreeAlert").innerHTML = agreeAlert;
         }
 
 
-       
+
 
         return result;
 

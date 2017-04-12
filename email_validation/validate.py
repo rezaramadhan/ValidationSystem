@@ -46,17 +46,3 @@ def validate_email(email_checked):
     resultHeader = soup.find_all("h3")[0].findAll(text=True)[0]
     result = resultHeader.find("Result: ")
     return not(resultHeader[result + 8:] == "Bad")
-
-# print "requesting"
-# print url
-#
-# r  = requests.get(url)
-# print "request done"
-# data = r.text
-#
-# print data
-
-# soup = BeautifulSoup(data)
-#
-# for link in soup.find_all('a'):
-#     print(link.get('href'))

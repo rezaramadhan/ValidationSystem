@@ -3,13 +3,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from validate import validate_email
 import json
-
+import re
 # Create your views here.
 @csrf_exempt
 def validation_form(request):
-    body_unicode = request.body.decode('utf-8')
-    body = json.loads(body_unicode)
+    j = request.body.decode('utf-8')
+    j = re.sub(r"{\s*(\w)", r'{"\1', j)
+    j = re.sub(r",\s*(\w)", r',"\1', j)
+    j = re.sub(r"(\w):", r'\1":', j)
+    body = json.loads(j)
     email = body["email"]
-    result = validate_email(email)
+    # result = validate_email(email)
     response = "{ valid : '" + str(True) + "' }"
     return HttpResponse(response)
