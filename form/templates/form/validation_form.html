@@ -25,34 +25,33 @@
 
         <!-- You only need this form and the form-validation.css -->
 
-        <form class="form-validation" method="post" action="#">
+        <form class="form-validation" id="myForm" method="post" onsubmit="return validateAll()" action=""> 
+        {% csrf_token %}
 
             <div class="form-title-row">
                 <h1>Pendaftaran</h1>
             </div>
 
-            <div class="form-row form-input-email-row">
+            <div class="form-row form-input-name-row">
 
                 <label>
                     <span>Nama Lengkap</span>
                     <input type="text" name="name" id="name">
+                    <span id="fullNameAlert" style="color:red"></span><br>
                 </label>
 
-                <!--
-                    Add these three elements to every form row. They will be shown by the
-                    .form-valid-data and .form-invalid-data classes (see the JS for an example).
-                -->
-
-                
 
             </div>
 
-            <div class="form-row form-input-email-row">
+            <div class="form-row form-input-phone-row">
 
                 <label>
                     <span>Nomor Telepon</span>
-                    <input type="text" name="phone_number" id="phone_number">
+                    <input type="text" name="phone_number" id="phone_number" onblur="blurPhoneFunction()" onfocus="focusPhoneFunction()">
+
+                    <span id="phoneAlert" style="color:red"></span><br>
                 </label>
+
 
                 <!--
                     Add these three elements to every form row. They will be shown by the
@@ -66,11 +65,13 @@
 
             </div>
 
-            <div class="form-row form-input-name-row">
+
+            <div class="form-row form-input-email-row">
 
                 <label>
                     <span>Email</span>
-                    <input type="email" name="email" id="email" value="">
+                    <input type="email" name="email" id="email" value=""  onblur="blurEmailFunction()" onfocus="focusEmailFunction()">
+                    <span id="emailAlert" style="color:red"></span><br>
                 </label>
 
                 <span class="form-valid-data-sign"><i class="fa fa-check"></i></span>
@@ -113,19 +114,24 @@
 
                 <label class="form-checkbox">
                     <span>Saya menyetujui pihak IDP untuk menghubungi</span>
-                    <input type="checkbox" name="checkbox" checked>
+                    <input type="checkbox" name="checkbox" id="agreement" value="false"><br>
+                    <span id="agreeAlert" style="color:red"></span><br>
                 </label>
 
             </div>
 
-            <div class="form-row">
+            <div class="form-row button">
 
-                <button type="submit">SUBMIT</button>
-
+                <input type="submit" value="SUBMIT" id="button"></input>
+                <!-- <button type="button" onclick="sendRequest()">AAA</button> -->
             </div>
 
+            <div id="id01" style="font: bold 20px sans-serif;"></div>
         </form>
 
+        <input id="isEmailValid" style="display: none;" value="false"></input>
+        <input id="isPhoneValid" style="display: none;" value="false"></input>
+        
     </div>
 
 
@@ -133,42 +139,184 @@
 
 <script>
 
-    $(document).ready(function() {
+// function coba() {
+//     var xmlhttp = new XMLHttpRequest();
+// var url = "myTutorials.txt";
 
-        // Here is how to show an error message next to a form field
+// xmlhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//         var myArr = JSON.parse(this.responseText);
+//         myFunction(myArr);
+//     }
+// };
+// xmlhttp.open("GET", url, true);
+// xmlhttp.send();
 
-        var ajaxRequest;
-        $('#email').keyup(function() {
-        var value = $(this).val();
-        clearTimeout(ajaxRequest);
-        ajaxRequest = setTimeout(function(sn) {
-          $.ajax({
-            type: 'post',
-            url: 'screenNameCheck.php',
-            data: 'Screen_Name=' + value,
-            success: function(r) {
-              $('.screenNameError').html(r);
+// function myFunction(arr) {
+//     var out = "";
+//     var i;
+//     for(i = 0; i < arr.length; i++) {
+//         out += '<a href="' + arr[i].url + '">' + 
+//         arr[i].display + '</a><br>';
+//     }
+//     document.getElementById("id01").innerHTML = out;
+// }
+// }
+
+
+    function sendRequest(json_obj) {
+        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+        xmlhttp.open("POST", "localhost:8000/validate/email/");
+        xmlhttp.setRequestHeader("Content-Type", "application/json");
+        xmlhttp.send(JSON.stringify(json_obj));        
+    }
+
+    function blurEmailFunction() {
+        var x = document.getElementById("email").value;
+        // No focus = Changes the background color of input to red
+        
+        var json_email = [
+        {
+            "email": x,
+        }];
+        //fungsi
+
+        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+        xmlhttp.open("POST", "localhost:8000/validate/email/");
+        xmlhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+        xmlhttp.send(JSON.stringify(json_email));      
+        xmlhttp.onreadystatechange = function() 
+        { 
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var data = xmlhttp.responseText;
             }
-          });
-        }, 500, value);
-        });
+        };
+        document.getElementById("isEmailValid").innerHTML = data;
+
+        // document.getElementById("id01").innerHTML = x;
+        var isTrueSet = (document.getElementById("isEmailValid").value == "true");
+        validateEmailResponse(isTrueSet);
+        
+    }
+
+    function blurPhoneFunction() {
+        var x = document.getElementById("phone_number").value;
+        var json_phone = [
+        {
+            "phone_number": x
+        }];
+        //fungsi
+
+        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+        xmlhttp.open("POST", "localhost:8000/validate/phone/");
+        xmlhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+        xmlhttp.send(JSON.stringify(json_phone));      
+        xmlhttp.onreadystatechange = function() 
+        { 
+             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var data = xmlhttp.responseText;
+            }
+        };
+        document.getElementById("isPhoneValid").innerHTML = data;
+
+        var isTrueSet = (document.getElementById("isPhoneValid").value == 'true');
+        validatePhoneResponse(isTrueSet);
+    }
+
+    function validateEmailResponse(emailValid) {
+
+        if (!emailValid) {
+            var errorField = $('.form-input-email-row');
+
+            // Adding the form-invalid-data class will show
+            // the error message and the red x for that field
+
+            errorField.addClass('form-invalid-data');
+            errorField.find('.form-invalid-data-info').text('Please enter valid email');
+
+        }
+        else {
+            var successField = $('.form-input-email-row');
+
+            successField.addClass('form-valid-data');
+        }        
+    }
+
+    function validatePhoneResponse(phoneValid) {
+        if (!phoneValid) {
+            var errorField = $('.form-input-phone-row');
+
+            // Adding the form-invalid-data class will show
+            // the error message and the red x for that field
+
+            errorField.addClass('form-invalid-data');
+            errorField.find('.form-invalid-data-info').text('Please enter valid phone number');
+        }
+        else {
+            var successField = $('.form-input-phone-row');
+
+            successField.addClass('form-valid-data');
+        }        
+    }
+
+    function validateAll() {
+        var fullNameAlert,emailAlert,phoneAlert,agreeAlert = "";
+
+        var fullName = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone_number").value;
+        
+        var result = true;
+
+        //document.getElementById("id01").innerHTML = fullName;
+
+        if (fullName == null || fullName =="" ) {
+            fullNameAlert = "Required.";
+            result = false;
+            document.getElementById("fullNameAlert").innerHTML = fullNameAlert;
+        }
+        else {
+            fullNameAlert = "";
+            document.getElementById("fullNameAlert").innerHTML = fullNameAlert;     
+        }
+
+        if (email == null || email =="" ) {
+            emailAlert = "Required.";
+            result = false;
+            document.getElementById("emailAlert").innerHTML = emailAlert;
+        }
+        else {
+            emailAlert = "";
+            document.getElementById("emailAlert").innerHTML = emailAlert;     
+        }
+
+        if (phone == null || phone =="" ) {
+            phoneAlert = "Required.";
+            result = false;
+            document.getElementById("phoneAlert").innerHTML = phoneAlert;
+        }
+        else {
+            phoneAlert = "";
+            document.getElementById("phoneAlert").innerHTML = phoneAlert;     
+        }
+
+        var agree = document.getElementById("agreement").checked;
+        if (agree == false) {
+            agreeAlert = "Required.";
+            result = false;
+            document.getElementById("agreeAlert").innerHTML = agreeAlert;
+        }
+        else {
+            agreeAlert = "";
+            document.getElementById("agreeAlert").innerHTML = agreeAlert;     
+        }
 
 
-        var errorField = $('.form-input-name-row');
+       
 
-        // Adding the form-invalid-data class will show
-        // the error message and the red x for that field
+        return result;
 
-        errorField.addClass('form-invalid-data');
-        errorField.find('.form-invalid-data-info').text('Please enter valid value');
-
-
-        // Here is how to mark a field with a green check mark
-
-        var successField = $('.form-input-email-row');
-
-        successField.addClass('form-valid-data');
-    });
+    }
 
 </script>
 
