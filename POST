@@ -1,0 +1,224 @@
+== Info: Rebuilt URL to: localhost:8000/
+== Info:   Trying 127.0.0.1...
+== Info: Connected to localhost (127.0.0.1) port 8000 (#0)
+=> Send header, 148 bytes (0x94)
+0000: 50 4f 53 54 20 2f 20 48 54 54 50 2f 31 2e 31 0d POST / HTTP/1.1.
+0010: 0a 48 6f 73 74 3a 20 6c 6f 63 61 6c 68 6f 73 74 .Host: localhost
+0020: 3a 38 30 30 30 0d 0a 55 73 65 72 2d 41 67 65 6e :8000..User-Agen
+0030: 74 3a 20 63 75 72 6c 2f 37 2e 34 36 2e 30 0d 0a t: curl/7.46.0..
+0040: 41 63 63 65 70 74 3a 20 2a 2f 2a 0d 0a 43 6f 6e Accept: */*..Con
+0050: 74 65 6e 74 2d 4c 65 6e 67 74 68 3a 20 36 33 0d tent-Length: 63.
+0060: 0a 43 6f 6e 74 65 6e 74 2d 54 79 70 65 3a 20 61 .Content-Type: a
+0070: 70 70 6c 69 63 61 74 69 6f 6e 2f 78 2d 77 77 77 pplication/x-www
+0080: 2d 66 6f 72 6d 2d 75 72 6c 65 6e 63 6f 64 65 64 -form-urlencoded
+0090: 0d 0a 0d 0a                                     ....
+=> Send data, 63 bytes (0x3f)
+0000: 61 70 69 5f 73 65 63 72 65 74 3d 37 37 61 33 34 api_secret=77a34
+0010: 32 36 64 36 38 34 63 33 63 62 64 26 74 6f 3d 2b 26d684c3cbd&to=+
+0020: 36 32 38 31 32 32 31 39 37 30 39 34 37 26 66 72 6281221970947&fr
+0030: 6f 6d 3d 4e 45 58 4d 4f 26 74 65 78 74 3d 2e    om=NEXMO&text=.
+== Info: upload completely sent off: 63 out of 63 bytes
+== Info: HTTP 1.0, assume close after body
+<= Recv header, 24 bytes (0x18)
+0000: 48 54 54 50 2f 31 2e 30 20 34 30 33 20 46 6f 72 HTTP/1.0 403 For
+0010: 62 69 64 64 65 6e 0d 0a                         bidden..
+<= Recv header, 37 bytes (0x25)
+0000: 44 61 74 65 3a 20 57 65 64 2c 20 31 32 20 41 70 Date: Wed, 12 Ap
+0010: 72 20 32 30 31 37 20 30 31 3a 33 31 3a 33 31 20 r 2017 01:31:31 
+0020: 47 4d 54 0d 0a                                  GMT..
+<= Recv header, 38 bytes (0x26)
+0000: 53 65 72 76 65 72 3a 20 57 53 47 49 53 65 72 76 Server: WSGIServ
+0010: 65 72 2f 30 2e 32 20 43 50 79 74 68 6f 6e 2f 33 er/0.2 CPython/3
+0020: 2e 35 2e 31 0d 0a                               .5.1..
+<= Recv header, 29 bytes (0x1d)
+0000: 58 2d 46 72 61 6d 65 2d 4f 70 74 69 6f 6e 73 3a X-Frame-Options:
+0010: 20 53 41 4d 45 4f 52 49 47 49 4e 0d 0a           SAMEORIGIN..
+<= Recv header, 25 bytes (0x19)
+0000: 43 6f 6e 74 65 6e 74 2d 54 79 70 65 3a 20 74 65 Content-Type: te
+0010: 78 74 2f 68 74 6d 6c 0d 0a                      xt/html..
+<= Recv header, 22 bytes (0x16)
+0000: 43 6f 6e 74 65 6e 74 2d 4c 65 6e 67 74 68 3a 20 Content-Length: 
+0010: 32 38 35 37 0d 0a                               2857..
+<= Recv header, 2 bytes (0x2)
+0000: 0d 0a                                           ..
+<= Recv data, 2857 bytes (0xb29)
+0000: 0a 3c 21 44 4f 43 54 59 50 45 20 68 74 6d 6c 3e .<!DOCTYPE html>
+0010: 0a 3c 68 74 6d 6c 20 6c 61 6e 67 3d 22 65 6e 22 .<html lang="en"
+0020: 3e 0a 3c 68 65 61 64 3e 0a 20 20 3c 6d 65 74 61 >.<head>.  <meta
+0030: 20 68 74 74 70 2d 65 71 75 69 76 3d 22 63 6f 6e  http-equiv="con
+0040: 74 65 6e 74 2d 74 79 70 65 22 20 63 6f 6e 74 65 tent-type" conte
+0050: 6e 74 3d 22 74 65 78 74 2f 68 74 6d 6c 3b 20 63 nt="text/html; c
+0060: 68 61 72 73 65 74 3d 75 74 66 2d 38 22 3e 0a 20 harset=utf-8">. 
+0070: 20 3c 6d 65 74 61 20 6e 61 6d 65 3d 22 72 6f 62  <meta name="rob
+0080: 6f 74 73 22 20 63 6f 6e 74 65 6e 74 3d 22 4e 4f ots" content="NO
+0090: 4e 45 2c 4e 4f 41 52 43 48 49 56 45 22 3e 0a 20 NE,NOARCHIVE">. 
+00a0: 20 3c 74 69 74 6c 65 3e 34 30 33 20 46 6f 72 62  <title>403 Forb
+00b0: 69 64 64 65 6e 3c 2f 74 69 74 6c 65 3e 0a 20 20 idden</title>.  
+00c0: 3c 73 74 79 6c 65 20 74 79 70 65 3d 22 74 65 78 <style type="tex
+00d0: 74 2f 63 73 73 22 3e 0a 20 20 20 20 68 74 6d 6c t/css">.    html
+00e0: 20 2a 20 7b 20 70 61 64 64 69 6e 67 3a 30 3b 20  * { padding:0; 
+00f0: 6d 61 72 67 69 6e 3a 30 3b 20 7d 0a 20 20 20 20 margin:0; }.    
+0100: 62 6f 64 79 20 2a 20 7b 20 70 61 64 64 69 6e 67 body * { padding
+0110: 3a 31 30 70 78 20 32 30 70 78 3b 20 7d 0a 20 20 :10px 20px; }.  
+0120: 20 20 62 6f 64 79 20 2a 20 2a 20 7b 20 70 61 64   body * * { pad
+0130: 64 69 6e 67 3a 30 3b 20 7d 0a 20 20 20 20 62 6f ding:0; }.    bo
+0140: 64 79 20 7b 20 66 6f 6e 74 3a 73 6d 61 6c 6c 20 dy { font:small 
+0150: 73 61 6e 73 2d 73 65 72 69 66 3b 20 62 61 63 6b sans-serif; back
+0160: 67 72 6f 75 6e 64 3a 23 65 65 65 3b 20 7d 0a 20 ground:#eee; }. 
+0170: 20 20 20 62 6f 64 79 3e 64 69 76 20 7b 20 62 6f    body>div { bo
+0180: 72 64 65 72 2d 62 6f 74 74 6f 6d 3a 31 70 78 20 rder-bottom:1px 
+0190: 73 6f 6c 69 64 20 23 64 64 64 3b 20 7d 0a 20 20 solid #ddd; }.  
+01a0: 20 20 68 31 20 7b 20 66 6f 6e 74 2d 77 65 69 67   h1 { font-weig
+01b0: 68 74 3a 6e 6f 72 6d 61 6c 3b 20 6d 61 72 67 69 ht:normal; margi
+01c0: 6e 2d 62 6f 74 74 6f 6d 3a 2e 34 65 6d 3b 20 7d n-bottom:.4em; }
+01d0: 0a 20 20 20 20 68 31 20 73 70 61 6e 20 7b 20 66 .    h1 span { f
+01e0: 6f 6e 74 2d 73 69 7a 65 3a 36 30 25 3b 20 63 6f ont-size:60%; co
+01f0: 6c 6f 72 3a 23 36 36 36 3b 20 66 6f 6e 74 2d 77 lor:#666; font-w
+0200: 65 69 67 68 74 3a 6e 6f 72 6d 61 6c 3b 20 7d 0a eight:normal; }.
+0210: 20 20 20 20 23 69 6e 66 6f 20 7b 20 62 61 63 6b     #info { back
+0220: 67 72 6f 75 6e 64 3a 23 66 36 66 36 66 36 3b 20 ground:#f6f6f6; 
+0230: 7d 0a 20 20 20 20 23 69 6e 66 6f 20 75 6c 20 7b }.    #info ul {
+0240: 20 6d 61 72 67 69 6e 3a 20 30 2e 35 65 6d 20 34  margin: 0.5em 4
+0250: 65 6d 3b 20 7d 0a 20 20 20 20 23 69 6e 66 6f 20 em; }.    #info 
+0260: 70 2c 20 23 73 75 6d 6d 61 72 79 20 70 20 7b 20 p, #summary p { 
+0270: 70 61 64 64 69 6e 67 2d 74 6f 70 3a 31 30 70 78 padding-top:10px
+0280: 3b 20 7d 0a 20 20 20 20 23 73 75 6d 6d 61 72 79 ; }.    #summary
+0290: 20 7b 20 62 61 63 6b 67 72 6f 75 6e 64 3a 20 23  { background: #
+02a0: 66 66 63 3b 20 7d 0a 20 20 20 20 23 65 78 70 6c ffc; }.    #expl
+02b0: 61 6e 61 74 69 6f 6e 20 7b 20 62 61 63 6b 67 72 anation { backgr
+02c0: 6f 75 6e 64 3a 23 65 65 65 3b 20 62 6f 72 64 65 ound:#eee; borde
+02d0: 72 2d 62 6f 74 74 6f 6d 3a 20 30 70 78 20 6e 6f r-bottom: 0px no
+02e0: 6e 65 3b 20 7d 0a 20 20 3c 2f 73 74 79 6c 65 3e ne; }.  </style>
+02f0: 0a 3c 2f 68 65 61 64 3e 0a 3c 62 6f 64 79 3e 0a .</head>.<body>.
+0300: 3c 64 69 76 20 69 64 3d 22 73 75 6d 6d 61 72 79 <div id="summary
+0310: 22 3e 0a 20 20 3c 68 31 3e 46 6f 72 62 69 64 64 ">.  <h1>Forbidd
+0320: 65 6e 20 3c 73 70 61 6e 3e 28 34 30 33 29 3c 2f en <span>(403)</
+0330: 73 70 61 6e 3e 3c 2f 68 31 3e 0a 20 20 3c 70 3e span></h1>.  <p>
+0340: 43 53 52 46 20 76 65 72 69 66 69 63 61 74 69 6f CSRF verificatio
+0350: 6e 20 66 61 69 6c 65 64 2e 20 52 65 71 75 65 73 n failed. Reques
+0360: 74 20 61 62 6f 72 74 65 64 2e 3c 2f 70 3e 0a 0a t aborted.</p>..
+0370: 0a 20 20 3c 70 3e 59 6f 75 20 61 72 65 20 73 65 .  <p>You are se
+0380: 65 69 6e 67 20 74 68 69 73 20 6d 65 73 73 61 67 eing this messag
+0390: 65 20 62 65 63 61 75 73 65 20 74 68 69 73 20 73 e because this s
+03a0: 69 74 65 20 72 65 71 75 69 72 65 73 20 61 20 43 ite requires a C
+03b0: 53 52 46 20 63 6f 6f 6b 69 65 20 77 68 65 6e 20 SRF cookie when 
+03c0: 73 75 62 6d 69 74 74 69 6e 67 20 66 6f 72 6d 73 submitting forms
+03d0: 2e 20 54 68 69 73 20 63 6f 6f 6b 69 65 20 69 73 . This cookie is
+03e0: 20 72 65 71 75 69 72 65 64 20 66 6f 72 20 73 65  required for se
+03f0: 63 75 72 69 74 79 20 72 65 61 73 6f 6e 73 2c 20 curity reasons, 
+0400: 74 6f 20 65 6e 73 75 72 65 20 74 68 61 74 20 79 to ensure that y
+0410: 6f 75 72 20 62 72 6f 77 73 65 72 20 69 73 20 6e our browser is n
+0420: 6f 74 20 62 65 69 6e 67 20 68 69 6a 61 63 6b 65 ot being hijacke
+0430: 64 20 62 79 20 74 68 69 72 64 20 70 61 72 74 69 d by third parti
+0440: 65 73 2e 3c 2f 70 3e 0a 20 20 3c 70 3e 49 66 20 es.</p>.  <p>If 
+0450: 79 6f 75 20 68 61 76 65 20 63 6f 6e 66 69 67 75 you have configu
+0460: 72 65 64 20 79 6f 75 72 20 62 72 6f 77 73 65 72 red your browser
+0470: 20 74 6f 20 64 69 73 61 62 6c 65 20 63 6f 6f 6b  to disable cook
+0480: 69 65 73 2c 20 70 6c 65 61 73 65 20 72 65 2d 65 ies, please re-e
+0490: 6e 61 62 6c 65 20 74 68 65 6d 2c 20 61 74 20 6c nable them, at l
+04a0: 65 61 73 74 20 66 6f 72 20 74 68 69 73 20 73 69 east for this si
+04b0: 74 65 2c 20 6f 72 20 66 6f 72 20 26 23 33 39 3b te, or for &#39;
+04c0: 73 61 6d 65 2d 6f 72 69 67 69 6e 26 23 33 39 3b same-origin&#39;
+04d0: 20 72 65 71 75 65 73 74 73 2e 3c 2f 70 3e 0a 0a  requests.</p>..
+04e0: 3c 2f 64 69 76 3e 0a 0a 3c 64 69 76 20 69 64 3d </div>..<div id=
+04f0: 22 69 6e 66 6f 22 3e 0a 20 20 3c 68 32 3e 48 65 "info">.  <h2>He
+0500: 6c 70 3c 2f 68 32 3e 0a 20 20 20 20 0a 20 20 20 lp</h2>.    .   
+0510: 20 3c 70 3e 52 65 61 73 6f 6e 20 67 69 76 65 6e  <p>Reason given
+0520: 20 66 6f 72 20 66 61 69 6c 75 72 65 3a 3c 2f 70  for failure:</p
+0530: 3e 0a 20 20 20 20 3c 70 72 65 3e 0a 20 20 20 20 >.    <pre>.    
+0540: 43 53 52 46 20 63 6f 6f 6b 69 65 20 6e 6f 74 20 CSRF cookie not 
+0550: 73 65 74 2e 0a 20 20 20 20 3c 2f 70 72 65 3e 0a set..    </pre>.
+0560: 20 20 20 20 0a 0a 20 20 3c 70 3e 49 6e 20 67 65     ..  <p>In ge
+0570: 6e 65 72 61 6c 2c 20 74 68 69 73 20 63 61 6e 20 neral, this can 
+0580: 6f 63 63 75 72 20 77 68 65 6e 20 74 68 65 72 65 occur when there
+0590: 20 69 73 20 61 20 67 65 6e 75 69 6e 65 20 43 72  is a genuine Cr
+05a0: 6f 73 73 20 53 69 74 65 20 52 65 71 75 65 73 74 oss Site Request
+05b0: 20 46 6f 72 67 65 72 79 2c 20 6f 72 20 77 68 65  Forgery, or whe
+05c0: 6e 0a 20 20 3c 61 0a 20 20 68 72 65 66 3d 22 68 n.  <a.  href="h
+05d0: 74 74 70 73 3a 2f 2f 64 6f 63 73 2e 64 6a 61 6e ttps://docs.djan
+05e0: 67 6f 70 72 6f 6a 65 63 74 2e 63 6f 6d 2f 65 6e goproject.com/en
+05f0: 2f 31 2e 31 31 2f 72 65 66 2f 63 73 72 66 2f 22 /1.11/ref/csrf/"
+0600: 3e 44 6a 61 6e 67 6f 27 73 0a 20 20 43 53 52 46 >Django's.  CSRF
+0610: 20 6d 65 63 68 61 6e 69 73 6d 3c 2f 61 3e 20 68  mechanism</a> h
+0620: 61 73 20 6e 6f 74 20 62 65 65 6e 20 75 73 65 64 as not been used
+0630: 20 63 6f 72 72 65 63 74 6c 79 2e 20 20 46 6f 72  correctly.  For
+0640: 20 50 4f 53 54 20 66 6f 72 6d 73 2c 20 79 6f 75  POST forms, you
+0650: 20 6e 65 65 64 20 74 6f 0a 20 20 65 6e 73 75 72  need to.  ensur
+0660: 65 3a 3c 2f 70 3e 0a 0a 20 20 3c 75 6c 3e 0a 20 e:</p>..  <ul>. 
+0670: 20 20 20 3c 6c 69 3e 59 6f 75 72 20 62 72 6f 77    <li>Your brow
+0680: 73 65 72 20 69 73 20 61 63 63 65 70 74 69 6e 67 ser is accepting
+0690: 20 63 6f 6f 6b 69 65 73 2e 3c 2f 6c 69 3e 0a 0a  cookies.</li>..
+06a0: 20 20 20 20 3c 6c 69 3e 54 68 65 20 76 69 65 77     <li>The view
+06b0: 20 66 75 6e 63 74 69 6f 6e 20 70 61 73 73 65 73  function passes
+06c0: 20 61 20 3c 63 6f 64 65 3e 72 65 71 75 65 73 74  a <code>request
+06d0: 3c 2f 63 6f 64 65 3e 20 74 6f 20 74 68 65 20 74 </code> to the t
+06e0: 65 6d 70 6c 61 74 65 27 73 20 3c 61 0a 20 20 20 emplate's <a.   
+06f0: 20 68 72 65 66 3d 22 68 74 74 70 73 3a 2f 2f 64  href="https://d
+0700: 6f 63 73 2e 64 6a 61 6e 67 6f 70 72 6f 6a 65 63 ocs.djangoprojec
+0710: 74 2e 63 6f 6d 2f 65 6e 2f 64 65 76 2f 74 6f 70 t.com/en/dev/top
+0720: 69 63 73 2f 74 65 6d 70 6c 61 74 65 73 2f 23 64 ics/templates/#d
+0730: 6a 61 6e 67 6f 2e 74 65 6d 70 6c 61 74 65 2e 62 jango.template.b
+0740: 61 63 6b 65 6e 64 73 2e 62 61 73 65 2e 54 65 6d ackends.base.Tem
+0750: 70 6c 61 74 65 2e 72 65 6e 64 65 72 22 3e 3c 63 plate.render"><c
+0760: 6f 64 65 3e 72 65 6e 64 65 72 3c 2f 63 6f 64 65 ode>render</code
+0770: 3e 3c 2f 61 3e 0a 20 20 20 20 6d 65 74 68 6f 64 ></a>.    method
+0780: 2e 3c 2f 6c 69 3e 0a 0a 20 20 20 20 3c 6c 69 3e .</li>..    <li>
+0790: 49 6e 20 74 68 65 20 74 65 6d 70 6c 61 74 65 2c In the template,
+07a0: 20 74 68 65 72 65 20 69 73 20 61 20 3c 63 6f 64  there is a <cod
+07b0: 65 3e 7b 25 20 63 73 72 66 5f 74 6f 6b 65 6e 0a e>{% csrf_token.
+07c0: 20 20 20 20 25 7d 3c 2f 63 6f 64 65 3e 20 74 65     %}</code> te
+07d0: 6d 70 6c 61 74 65 20 74 61 67 20 69 6e 73 69 64 mplate tag insid
+07e0: 65 20 65 61 63 68 20 50 4f 53 54 20 66 6f 72 6d e each POST form
+07f0: 20 74 68 61 74 0a 20 20 20 20 74 61 72 67 65 74  that.    target
+0800: 73 20 61 6e 20 69 6e 74 65 72 6e 61 6c 20 55 52 s an internal UR
+0810: 4c 2e 3c 2f 6c 69 3e 0a 0a 20 20 20 20 3c 6c 69 L.</li>..    <li
+0820: 3e 49 66 20 79 6f 75 20 61 72 65 20 6e 6f 74 20 >If you are not 
+0830: 75 73 69 6e 67 20 3c 63 6f 64 65 3e 43 73 72 66 using <code>Csrf
+0840: 56 69 65 77 4d 69 64 64 6c 65 77 61 72 65 3c 2f ViewMiddleware</
+0850: 63 6f 64 65 3e 2c 20 74 68 65 6e 20 79 6f 75 20 code>, then you 
+0860: 6d 75 73 74 20 75 73 65 0a 20 20 20 20 3c 63 6f must use.    <co
+0870: 64 65 3e 63 73 72 66 5f 70 72 6f 74 65 63 74 3c de>csrf_protect<
+0880: 2f 63 6f 64 65 3e 20 6f 6e 20 61 6e 79 20 76 69 /code> on any vi
+0890: 65 77 73 20 74 68 61 74 20 75 73 65 20 74 68 65 ews that use the
+08a0: 20 3c 63 6f 64 65 3e 63 73 72 66 5f 74 6f 6b 65  <code>csrf_toke
+08b0: 6e 3c 2f 63 6f 64 65 3e 0a 20 20 20 20 74 65 6d n</code>.    tem
+08c0: 70 6c 61 74 65 20 74 61 67 2c 20 61 73 20 77 65 plate tag, as we
+08d0: 6c 6c 20 61 73 20 74 68 6f 73 65 20 74 68 61 74 ll as those that
+08e0: 20 61 63 63 65 70 74 20 74 68 65 20 50 4f 53 54  accept the POST
+08f0: 20 64 61 74 61 2e 3c 2f 6c 69 3e 0a 0a 20 20 20  data.</li>..   
+0900: 20 3c 6c 69 3e 54 68 65 20 66 6f 72 6d 20 68 61  <li>The form ha
+0910: 73 20 61 20 76 61 6c 69 64 20 43 53 52 46 20 74 s a valid CSRF t
+0920: 6f 6b 65 6e 2e 20 41 66 74 65 72 20 6c 6f 67 67 oken. After logg
+0930: 69 6e 67 20 69 6e 20 69 6e 20 61 6e 6f 74 68 65 ing in in anothe
+0940: 72 20 62 72 6f 77 73 65 72 0a 20 20 20 20 74 61 r browser.    ta
+0950: 62 20 6f 72 20 68 69 74 74 69 6e 67 20 74 68 65 b or hitting the
+0960: 20 62 61 63 6b 20 62 75 74 74 6f 6e 20 61 66 74  back button aft
+0970: 65 72 20 61 20 6c 6f 67 69 6e 2c 20 79 6f 75 20 er a login, you 
+0980: 6d 61 79 20 6e 65 65 64 20 74 6f 20 72 65 6c 6f may need to relo
+0990: 61 64 20 74 68 65 0a 20 20 20 20 70 61 67 65 20 ad the.    page 
+09a0: 77 69 74 68 20 74 68 65 20 66 6f 72 6d 2c 20 62 with the form, b
+09b0: 65 63 61 75 73 65 20 74 68 65 20 74 6f 6b 65 6e ecause the token
+09c0: 20 69 73 20 72 6f 74 61 74 65 64 20 61 66 74 65  is rotated afte
+09d0: 72 20 61 20 6c 6f 67 69 6e 2e 3c 2f 6c 69 3e 0a r a login.</li>.
+09e0: 20 20 3c 2f 75 6c 3e 0a 0a 20 20 3c 70 3e 59 6f   </ul>..  <p>Yo
+09f0: 75 27 72 65 20 73 65 65 69 6e 67 20 74 68 65 20 u're seeing the 
+0a00: 68 65 6c 70 20 73 65 63 74 69 6f 6e 20 6f 66 20 help section of 
+0a10: 74 68 69 73 20 70 61 67 65 20 62 65 63 61 75 73 this page becaus
+0a20: 65 20 79 6f 75 20 68 61 76 65 20 3c 63 6f 64 65 e you have <code
+0a30: 3e 44 45 42 55 47 20 3d 0a 20 20 54 72 75 65 3c >DEBUG =.  True<
+0a40: 2f 63 6f 64 65 3e 20 69 6e 20 79 6f 75 72 20 44 /code> in your D
+0a50: 6a 61 6e 67 6f 20 73 65 74 74 69 6e 67 73 20 66 jango settings f
+0a60: 69 6c 65 2e 20 43 68 61 6e 67 65 20 74 68 61 74 ile. Change that
+0a70: 20 74 6f 20 3c 63 6f 64 65 3e 46 61 6c 73 65 3c  to <code>False<
+0a80: 2f 63 6f 64 65 3e 2c 0a 20 20 61 6e 64 20 6f 6e /code>,.  and on
+0a90: 6c 79 20 74 68 65 20 69 6e 69 74 69 61 6c 20 65 ly the initial e
+0aa0: 72 72 6f 72 20 6d 65 73 73 61 67 65 20 77 69 6c rror message wil
+0ab0: 6c 20 62 65 20 64 69 73 70 6c 61 79 65 64 2e 20 l be displayed. 
+0ac0: 20 3c 2f 70 3e 0a 0a 20 20 3c 70 3e 59 6f 75 20  </p>..  <p>You 
+0ad0: 63 61 6e 20 63 75 73 74 6f 6d 69 7a 65 20 74 68 can customize th
+0ae0: 69 73 20 70 61 67 65 20 75 73 69 6e 67 20 74 68 is page using th
+0af0: 65 20 43 53 52 46 5f 46 41 49 4c 55 52 45 5f 56 e CSRF_FAILURE_V
+0b00: 49 45 57 20 73 65 74 74 69 6e 67 2e 3c 2f 70 3e IEW setting.</p>
+0b10: 0a 3c 2f 64 69 76 3e 0a 0a 3c 2f 62 6f 64 79 3e .</div>..</body>
+0b20: 0a 3c 2f 68 74 6d 6c 3e 0a                      .</html>.
+== Info: Closing connection 0
